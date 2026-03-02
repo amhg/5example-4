@@ -6,5 +6,9 @@ app = Flask(__name__)
 def health():
     return {"status": "ok"}
 
+@app.route("/metrics")
+def metrics():
+    return {"users": 10}
+
 if __name__ == "__main__":
     app.run(debug=True)
